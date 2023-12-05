@@ -17,9 +17,7 @@ class MicropostsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create micropost" do
     assert_difference("Micropost.count") do
-      puts "マイクロポストの数（作成前）: #{Micropost.count}"
       post microposts_url, params: { micropost: { content: @micropost.content, user_id: @micropost.user_id } }
-      puts "マイクロポストの数（作成後）: #{Micropost.count}"
     end
 
     assert_redirected_to micropost_url(Micropost.last)
